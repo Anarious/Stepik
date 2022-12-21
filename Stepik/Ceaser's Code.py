@@ -1,9 +1,8 @@
-code = 'Hawnj pk swhg xabkna ukq nqj.'
-
-
+language = input('Please write EN or RU: ')
+code_type = input('Do you want to cipher or decipher: ')
 def ceasers_code(code, n):
-    language = input('Please write EN or RU: ')
-    code_type = input('Do you want to cipher or decipher: ')
+
+
 
     if language.lower() == 'ru' and code_type.lower() == 'decipher':
         res = ''
@@ -90,6 +89,12 @@ def ceasers_code(code, n):
             res += chr(cipher)
         return res
 
-for i in range(1, 26):
-    n = i
-    print(ceasers_code(code, n))
+
+code = input('Input your code here: ').split(' ')
+for i in range(len(code)):
+    length = 0
+    for b in code[i]:
+        if b.isalpha():
+            length += 1
+    n = length
+    print(ceasers_code(code[i], n), end=' ')
