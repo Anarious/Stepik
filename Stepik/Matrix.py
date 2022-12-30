@@ -1,11 +1,14 @@
-n, m = int(input()), int(input())
-matrix = [[input() for _ in range(m)] for _ in range(n)]
+n = int(input())
+matrix = [[int(i) for i in input().split(' ')] for _ in range(n)]
 
-for r in range(n):
-    for c in range(m):
+
+sum = 0
+for row in matrix:
+    for num in row:
+        if r == c:
+            sum += matrix[r][c]
         print(matrix[r][c], end=' ')
     print()
-for r in range(m):
-    for c in range(n):
-        print(matrix[c][r], end=' ')
-    print()
+
+print(sum)
+
